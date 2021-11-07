@@ -9,8 +9,8 @@ from telebot import types
 
 
 load_dotenv()
-telegram_token = os.getenv('telegram_token')
-weather_token = os.getenv('weather_token')
+telegram_token = os.getenv('2050928873:AAHU7aSWaBumCJtAn6dX1ZimT9yLAz4HCNg')
+weather_token = os.getenv('2b94c840f10e17da24b1edf36b4a950f')
 
 bot = telebot.TeleBot(telegram_token)
 URL = 'http://api.openweathermap.org/data/2.5/forecast'
