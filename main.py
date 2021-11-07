@@ -59,7 +59,8 @@ def get_weather(city):
         elif 25 <= feels_like:
             advice = '<b>Рекомендую</b>☝🏻: Мінімум шмоток - максимум засмаги, кабанчик 🌞🏖'
 
-        res = f'{advice}\n\n📍Погода у - м. <b>{city}</b> в {time}:00\n{description}. 🌡<i>Температура повітря:</i> {temp}°C, <i>відчувається як:</i> {feels_like}°C. 💧<i>Вологість:</i> {humidity} %, 🌬<i>швидкість вітру</i> {wind_speed} м/с.'
+        res = f'{advice}\n\n📍Погода у - м. <b>{city}</b> в {time}:00\n{description}. 
+'🌡<i>Температура повітря:</i> {temp}°C, <i>відчувається як:</i> {feels_like}°C. 💧<i>Вологість:</i> {humidity} %, 🌬<i>швидкість вітру</i> {wind_speed} м/с.'
 
         temp2 = round(response.json()['list'][2]['main']['temp'])
         feels_like2 = round(response.json()['list'][2]['main']['feels_like'])
