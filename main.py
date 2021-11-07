@@ -59,7 +59,7 @@ def get_weather(city):
         elif 25 <= feels_like:
             advice = '<b>Рекомендую</b>☝🏻: Мінімум шмоток - максимум засмаги, кабанчик 🌞🏖'
 
-        res = f'{advice}\n\n📍Погода у - м. <b>{city}</b> в {time}:00\n{description}. 🌡<i>Температура повітря:</i> {temp}°C, <i>відчувається як:</i> {feels_like}°C. 💧<i>Вологість</i> {humidity} %, 🌬швидкість вітру {wind_speed} м/с.'
+        res = f'{advice}\n\n📍Погода у - м. <b>{city}</b> в {time}:00\n{description}. 🌡<i>Температура повітря:</i> {temp}°C, <i>відчувається як:</i> {feels_like}°C. 💧<i>Вологість:</i> {humidity} %, 🌬<i>швидкість вітру</i> {wind_speed} м/с.'
 
         temp2 = round(response.json()['list'][2]['main']['temp'])
         feels_like2 = round(response.json()['list'][2]['main']['feels_like'])
@@ -67,7 +67,7 @@ def get_weather(city):
         description2 = response.json()['list'][2]['weather'][0]['description'].capitalize()
         wind_speed2 = round(response.json()['list'][2]['wind']['speed'])
         time2 = response.json()['list'][2]['dt_txt'].split(' ')[1].split(':')[0]
-        res2 = f'📍Погода у - м. {city} пізніше в {time2}:00\n{description2}. 🌡<i>Температура повітря:</i> {temp2}°C, <i>відчувається як:</i> {feels_like2}°C. 💧<i>Вологість</i> {humidity2} %, 🌬швидкість вітру {wind_speed2} м/с.'
+        res2 = f'📍Погода у - м. <b>{city}</b> в {time2}:00\n{description2}. 🌡<i>Температура повітря:</i> {temp2}°C, <i>відчувається як:</i> {feels_like2}°C. 💧<i>Вологість:</i> {humidity2} %, 🌬<i>швидкість вітру</i> {wind_speed2} м/с.'
 
         temp3 = round(response.json()['list'][4]['main']['temp'])
         feels_like3 = round(response.json()['list'][4]['main']['feels_like'])
@@ -75,7 +75,7 @@ def get_weather(city):
         description3 = response.json()['list'][4]['weather'][0]['description'].capitalize()
         wind_speed3 = round(response.json()['list'][4]['wind']['speed'])
         time3 = response.json()['list'][4]['dt_txt'].split(' ')[1].split(':')[0]
-        res3 = f'📍Погода у - м. {city} ще пізніше в {time3}:00\n{description3}. 🌡<i>Температура повітря:</i> {temp3}°C, <i>відчувається як:</i> {feels_like3}°C. 💧<i>Вологість</i> {humidity3} %, 🌬швидкість вітру {wind_speed3} м/с.'
+        res3 = f'📍Погода у - м. <b>{city}</b> в {time3}:00\n{description3}. 🌡<i>Температура повітря:</i> {temp3}°C, <i>відчувається як:</i> {feels_like3}°C. 💧<i>Вологість:</i> {humidity3} %, 🌬<i>швидкість вітру</i> {wind_speed3} м/с.'
 
         final_message = f'{res}\n\n{res2}\n\n{res3}'
     except KeyError:
